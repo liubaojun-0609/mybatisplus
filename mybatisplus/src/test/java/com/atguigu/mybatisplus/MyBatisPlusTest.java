@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created with IntelliJ IDEA.
@@ -38,4 +39,15 @@ public class MyBatisPlusTest {
         log.info("插入条数：" + insert);
         log.info("自动生成的id：" + user.getId());
     }
+
+    @Test
+    public void testSelect(){
+        User user = userMapper.selectById(5L);
+        log.info(user.toString());
+        log.info("=========================================================");
+        Map<String, Object> stringObjectMap = userMapper.selectByIdForMap(5L);
+        log.info(stringObjectMap.toString());
+    }
+
+
 }
