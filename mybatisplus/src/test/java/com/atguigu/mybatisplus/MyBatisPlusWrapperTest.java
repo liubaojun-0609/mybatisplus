@@ -2,8 +2,6 @@ package com.atguigu.mybatisplus;
 
 import com.atguigu.mybatisplus.mapper.UserMapper;
 import com.atguigu.mybatisplus.pojo.User;
-import com.atguigu.mybatisplus.service.UserService;
-import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
@@ -14,7 +12,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collector;
 
 @SpringBootTest
 public class MyBatisPlusWrapperTest {
@@ -104,8 +101,6 @@ public class MyBatisPlusWrapperTest {
     @Test
     public void test8(){
         String name = "";
-        Integer sAge = 10;
-        Integer eAge = 50;
         LambdaQueryWrapper<User> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.like(StringUtils.isNotBlank(name),User::getName,name);
         List<User> users = userMapper.selectList(queryWrapper);
