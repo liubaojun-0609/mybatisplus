@@ -48,6 +48,4 @@ public class MyBatisPlusTest {
         Map<String, Object> stringObjectMap = userMapper.selectByIdForMap(5L);
         log.info(stringObjectMap.toString());
     }
-
-
 }

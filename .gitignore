@@ -1,3 +1,4 @@
 # Project exclude paths
 /mybatisplus/target/
 /.idea/
+/.idea/*
