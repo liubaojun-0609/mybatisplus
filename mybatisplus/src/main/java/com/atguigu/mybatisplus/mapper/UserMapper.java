@@ -2,6 +2,7 @@ package com.atguigu.mybatisplus.mapper;
 
 import com.atguigu.mybatisplus.pojo.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -21,4 +22,6 @@ public interface UserMapper extends BaseMapper<User> {
      * 根据id查询用户信息，并返回map集合
      */
     Map<String,Object> selectByIdForMap(Long id);
+
+    Page<User> selectListVo(Page<User> page,@Param("age") String age);
 }

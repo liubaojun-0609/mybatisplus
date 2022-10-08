@@ -8,4 +8,8 @@
     <select id="selectByIdForMap" resultType="map" parameterType="Long">
         select * from user where id = #{id}
     </select>
+
+    <select id="selectListVo" resultType="User">
+        select * from user where age > #{age}
+    </select>
 </mapper>
